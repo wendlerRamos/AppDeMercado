@@ -124,7 +124,7 @@ class Bd {
         if(compra === null || compra == undefined){
           continue;
         }
-        valorTotal = valorTotal + compra.valor;
+        valorTotal = valorTotal + compra.valorT;
       }
       return valorTotal;
     }
