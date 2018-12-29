@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>App de Mercado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="img/browserIcon.png" type="image/x-png" />
     <!-- Bootstrap início -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -12,22 +13,21 @@
     <!-- Bootstrap fim -->
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="scripts/scriptMercado.js"></script>
+    <script src="js/scriptMercado.js"></script>
 </head>
 
 <body>
     <!-- MENU NAVEGAÇÃO -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
         <div class="container">
-            <a class="navbar-brand" href="index.html"> <img src="img/headerIcon.png" width="50" height="35" alt="Orçamento pessoal"> </a>
+            <a class="navbar-brand" href="home.html"> <img src="img/headerIcon.png" width="50" height="35" alt="App de Mercado"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"> <a class="nav-link" href="inserirProduto.html">Inserir na Compra</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="inserirPessoa.html">Inserir Pessoa</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="consultar.html">Consultar Lançamento</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="exibirPessoa.html">Consultar Total</a> </li>
-                    <li class="nav-item active"> <a class="nav-link" href="index.html">Inicio</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html">Inserir Produto</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html">Inserir Pessoa</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html">Consultar Lançamentos</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html">Consultar Saldos</a> </li>
                 </ul>
             </div>
         </div>
@@ -43,54 +43,52 @@
         </div>
         <!-- FIM TITULO DA PÁGINA -->
         <!-- INICIO CONTEÚDO -->
-        <div class='row'>
+        <div class='row col mb-5'>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">INSERIR PESSOA</h5>
-                    <p class="card-text">Insere uma nova pessoa a compra atual.</p> <a href="inserirPessoa.html" class="btn btn-primary">Inserir</a> </div>
+                    <p class="card-text">Insere uma nova pessoa a compra atual.</p> <a href="/appmercado/inserir/pessoa" class="btn btn-primary">Inserir</a> </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">INSERIR PRODUTO</h5>
-                    <p class="card-text">Insere um novo produto a compra atual.</p> <a href="inserirProduto.html" class="btn btn-primary">Inserir</a> </div>
+                    <p class="card-text">Insere um novo produto a compra atual.</p> <a href="/appmercado/inserir/compra" class="btn btn-primary">Inserir</a> </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">DESTRUIR COMPRA</h5>
-                    <p class="card-text">Remove todos os ítens da compra atual</p> <button onclick="removerItem()" class="btn btn-danger">Remover</button> </div>
+                    <p class="card-text">Remove todos os ítens da compra atual</p>
+                    <button onclick="removerItem()" class="btn btn-danger">Remover</button>
+                </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">LISTAR PRODUTOS</h5>
-                    <p class="card-text">Lista os produtos da compra atual.</p> <a href="consultar.html" class="btn btn-success">Visualizar</a> </div>
+                    <p class="card-text">Lista os produtos da compra atual.</p> <a href="/appmercado/consultar/compra" class="btn btn-success">Visualizar</a> </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">VISUALIZAR TOTAL</h5>
-                    <p class="card-text">Lista o total da compra e por usuário da compra atual.</p> <a href="exibirPessoa.html" class="btn btn-success">Visualizar</a> </div>
+                    <h5 class="card-title">VISUALIZAR SALDOS</h5>
+                    <p class="card-text">Lista o total da compra e por usuário da compra atual.</p> <a href="/appmercado/consultar/saldo" class="btn btn-success">Visualizar</a> </div>
             </div>
         </div>
         <!-- FIM CONTEÚDO -->
-
         <!-- Modal -->
         <div class="modal fade" id="modalIndex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div id = "tituloModal"class="modal-header">
-                <h5 class="modal-title" id="modalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div id = "textoDoModal"class="modal-body">
-
-              </div>
-              <div class="modal-footer">
-                <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
-              </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div id="tituloModal" class="modal-header">
+                        <h5 class="modal-title" id="modalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div id="textoDoModal" class="modal-body"> </div>
+                    <div class="modal-footer">
+                        <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
     </div>
 </body>
+
 </html>

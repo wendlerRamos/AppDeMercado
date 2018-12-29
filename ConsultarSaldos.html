@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>App de Mercado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="img/browserIcon.png" type="image/x-png" />
+    <!-- Bootstrap início -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap fim -->
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/scriptMercado.js"></script>
+</head>
+
+<body onload="listarRelPessoas()">
+    <!-- MENU NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="home.html"> <img src="img/headerIcon.png" width="50" height="35" alt="App de Mercado"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html">Inserir Produto</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html">Inserir Pessoa</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html">Consultar Lançamentos</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html">Consultar Saldos</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM NAVEGAÇÃO-->
+    <div class="container">
+        <!-- TITULO DA PÁGINA -->
+        <div class="row">
+            <div class="col mb-5">
+                <h1 class="display-4">Exibir Valores Por Pessoa</h1> </div>
+        </div>
+        <!-- FIM TITULO DA PÁGINA -->
+        <!-- INICIO CONTEÚDO -->
+        <div class='row col mb-5' id='listadepessoas'> </div>
+        <!-- FIM CONTEÚDO -->
+        <!-- Modal -->
+        <div class="modal fade" id="modalExibirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div id="tituloModal" class="modal-header">
+                        <h5 class="modal-title" id="modalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div id="textoDoModal" class="modal-body"> </div>
+                    <div class="modal-footer">
+                        <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -16,7 +16,7 @@
     <script src="js/scriptMercado.js"></script>
 </head>
 
-<body>
+<body onload="carregaPessoas()">
 <!-- MENU NAVEGAÇÃO -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
     <div class="container">
@@ -37,33 +37,45 @@
     <!-- TITULO DA PÁGINA -->
     <div class="row">
         <div class="col mb-5">
-            <h1 class="display-4">Inserir Pessoa</h1>
+            <h1 class="display-4">Inserir Produto</h1>
         </div>
     </div>
     <!-- FIM TITULO DA PÁGINA -->
     <!-- INICIO CONTEÚDO -->
-    <div class='row col mb-5'>
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Nome" id="nome" required/>
+    <div col mb-5>
+        <div class="col-md-12">
+            <input type="text" class="form-control" placeholder="Produto" id="descricao" />
         </div>
 
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Email" id="email" />
+        <br>
+
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <input type="number" class="form-control" placeholder="Quantidade" id="qt" />
+            </div>
+
+            <div class="col-md-6">
+                <input type="number" class="form-control" placeholder="Valor Unitário" id="valor" />
+            </div>
+        </div>
+        <br>
+
+        <div class='row col mb-5' style="margin: 0 auto" id='listadepessoas'>
+
+        </div>
+
+        <br>
+
+        <div class="col mb-5 d-flex ">
+            <button style="margin: 0 auto" type="button" class="btn btn-primary" onclick="inserirProduto()">
+                <i class="fas fa-plus"></i>
+            </button>
         </div>
     </div>
-
-    <br>
-
-    <div class="col-md-3 d-flex" style="margin: 0 auto">
-        <button style="margin: 0 auto"type="button" class="btn btn-primary" onclick="inserirPessoa()">
-            <i class="fas fa-plus"></i>
-        </button>
-    </div>
-
     <!-- FIM CONTEÚDO -->
 
     <!-- Modal -->
-    <div class="modal fade" id="modalInserirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalInserirProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div id = "tituloModal"class="modal-header">

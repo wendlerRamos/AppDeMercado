@@ -16,7 +16,7 @@
     <script src="js/scriptMercado.js"></script>
 </head>
 
-<body>
+<body onload="listarCompra()">
 <!-- MENU NAVEGAÇÃO -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
     <div class="container">
@@ -32,38 +32,43 @@
         </div>
     </div>
 </nav>
+
 <!-- FIM NAVEGAÇÃO-->
 <div class="container">
     <!-- TITULO DA PÁGINA -->
     <div class="row">
         <div class="col mb-5">
-            <h1 class="display-4">Inserir Pessoa</h1>
+            <h1 class="display-4">Consultar Lançamentos</h1>
         </div>
     </div>
     <!-- FIM TITULO DA PÁGINA -->
     <!-- INICIO CONTEÚDO -->
-    <div class='row col mb-5'>
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Nome" id="nome" required/>
-        </div>
+    <div>
+        <div class="row col mb-5">
+            <div class="col">
+                <table class="table table-responsive" >
+                    <thead>
+                    <tr>
+                        <th>Descricao</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unit</th>
+                        <th>Valor Total</th>
+                        <th>Pessoas</th>
+                        <th></th>
+                    </tr>
+                    </thead>
 
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Email" id="email" />
+                    <tbody id="listaCompras">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
-    <br>
-
-    <div class="col-md-3 d-flex" style="margin: 0 auto">
-        <button style="margin: 0 auto"type="button" class="btn btn-primary" onclick="inserirPessoa()">
-            <i class="fas fa-plus"></i>
-        </button>
-    </div>
-
     <!-- FIM CONTEÚDO -->
 
     <!-- Modal -->
-    <div class="modal fade" id="modalInserirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalInserirProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div id = "tituloModal"class="modal-header">
@@ -84,3 +89,6 @@
 </div>
 </body>
 </html>
+
+
+

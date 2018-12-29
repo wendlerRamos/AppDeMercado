@@ -31,15 +31,18 @@ class Produto {
   }
 
   validarProduto(){
-    for(let i in this){
-      if(this[i] == undefined || this[i] === '' || this[i] == null){
-        return false;
+
+      if(this.usuarios.length === 0){
+          return false;
       }
-    }
-    if(this.usuarios.length === 0){
-      return false;
-    }
-    return true;
+    return Object.values(this).every((valor) => {
+        if (!valor) {
+            return false;
+        }
+        return true;
+    })
+
+
   }
 }
 
@@ -86,7 +89,7 @@ class Bd {
         localStorage.setItem(usuario, JSON.stringify(usuariobd));
       }else if(tipoOperacao === 'subtracao'){
         let usuariobd = this.buscarUsuario(usuario);
-        usuariobd.total += valor;
+        usuariobd.total =  usuariobd.total - valor;
         localStorage.setItem(usuario, JSON.stringify(usuariobd));
       }
     }
@@ -133,6 +136,16 @@ class Bd {
         localStorage.removeItem(id)
     }
 
+    removerCompra(idCompra){
+        let compra = JSON.parse(localStorage.getItem(idCompra));
+        let pessoas = compra.usuarios;
+        let quant = pessoas.length;
+        let valorUser = compra.valorT / quant;
+        pessoas.forEach( function blabla(pessoa){
+            bd.alterarValorUsuario(pessoa, valorUser, 'subtracao');
+        });
+        localStorage.removeItem(idCompra);
+    }
 }
 
 
@@ -174,12 +187,28 @@ var limparCamposUsuario = function(){
   email.value="";
 }
 
+var limparCamposProduto = function(){
+    let produto = document.getElementById("descricao");
+    let qt = document.getElementById('qt');
+    let valor = document.getElementById('valor');
+
+    produto.value = "";
+    qt.value = "";
+    valor.value = "";
+}
+
 function carregaPessoas(){
   let usuarios = bd.buscarTodosNomesUsuarios();
   let divdeusers = document.getElementById('listadepessoas');
   let elemento = "";
   usuarios.forEach(function bla(usuario){
-    elemento = elemento.concat("<div class='card' style='width: 12rem'><div class='card-body'><h5 class='card-title'> ", usuario, "</h5><input id='", usuario, "' type='checkbox' checked='true' style= 'width: 80px ;height: 80px'></div></div>");
+    elemento = elemento.concat(`
+    <div class='card' style='width: 12rem'>
+        <div class='card-body'>
+            <h5 class='card-title'> ${usuario} </h5>
+             <input id="${usuario}" type='checkbox' checked='true' style= 'width: 80px ;height: 80px'>
+         </div>
+     </div>`);
   });
   divdeusers.innerHTML = (elemento);
 };
@@ -198,7 +227,8 @@ function inserirProduto(){
     }
   }
   let produto = new Produto(descricao.value, qt.value, valor.value, usuarios);
-  if (produto.validarProduto) {
+
+  if (produto.validarProduto()) {
     bd.gravarProduto(produto);
     //Alterar valor dos users
     let j = usuarios.length;
@@ -217,6 +247,7 @@ function inserirProduto(){
     mudarModal(titulo, texto, "erro")
     $('#modalInserirProduto').modal('show')
   }
+  limparCamposProduto();
 }
 
 //Remove um ítem da lista
@@ -229,6 +260,8 @@ function removerItem(){
 }
 
 var mudarModal = function (titulo, texto, type) {
+    $('#tituloModal').removeClass('text-danger');
+    $('#botaoModal').removeClass('btn-danger');
     if (type == "erro") {
         document.getElementById("tituloModal").classList.add("text-danger")
         document.getElementById("botaoModal").classList.add("btn-danger")
@@ -257,7 +290,7 @@ function listarCompra(){
     btn.id = `id_despesa_${aux.id}`
     btn.onclick = function(){
         let id = this.id.replace('id_despesa_', '')
-        bd.remover(id)
+        bd.removerCompra(id)
         window.location.reload()
     }
     linha.insertCell(5).append(btn)
