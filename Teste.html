@@ -13,10 +13,9 @@
     <!-- Bootstrap fim -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--Scripts -->
     <script src="js/scriptMercado.js"></script>
-    <!--CSS -->
-    <link rel="stylesheet" href="css/main-css.css"> </head>
+    <link rel="stylesheet" href="css/main-css.css">
+</head>
 
 <body>
     <!-- MENU NAVEGAÇÃO -->
@@ -36,39 +35,35 @@
         </div>
     </nav>
     <!-- FIM NAVEGAÇÃO-->
+    <!-- INICIO CONTEÚDO -->
     <div class="container">
-        <!-- TITULO DA PÁGINA -->
-        <div class="row">
-            <div class="col mb-5">
-                <h1 class="display-4">Bem vindo !</h1>
-                <p> Este aplicativo foi desenvolvido com o intuito de auxiliar o processo de divisão de valores entre várias pessoas de compras em geral</p>
+        <div class='card'>
+            <div class='card-header'>
+                <h1 class="text-center">Inserir Pessoa</h1>
+            </div>
+            <div class='card-body'>
+               <form>
+                <div class='row'>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class='col-md-12 form-group'>
+                            <input type="text" class="form-control input-md" placeholder="Nome" id="nome" required/> </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class='col-md-12 form-group'>
+                            <input type="text" class="form-control input-md" placeholder="Email" id="email" /> </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center" style="margin: 0 auto">
+                    <button class="btn btn-primary btn-xl btn-circle " onclick="inserirPessoa()" href='javascript:void(0);'> <i class="fa fa-plus fa-2x" aria-hidden='true'></i> </button>
+                </div>
+                </form>
             </div>
         </div>
-        <!-- FIM TITULO DA PÁGINA -->
-        <!-- INICIO CONTEÚDO -->
-        <div class='col-md-12 row'>
-            <div class='col'>
-                <div class='text-center'> <a href="Teste.html" class="btn btn-xl btn-primary btn-circle "><i class="fa fa-user-o fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Inserir Pessoa</h2></div>
-            <div class='col'>
-                <div class='text-center'> <a href="InserirCompra.html" class="btn btn-xl btn-primary btn-circle"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Inserir Produto</h2></div>
-            <div class='col'>
-                <div class='text-center'> <a href="ConsultarCompra.html" class="btn btn-xl btn-success btn-circle"><i class="fa fa-list-ol fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Listar Compra</h2></div>
-            <div class='col'>
-                <div class='text-center'> <a href="ConsultarSaldos.html" class="btn btn-xl btn-success btn-circle"><i class="fa fa-usd fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Mostrar Saldos</h2></div>
-            <div class='col'>
-                <div class='text-center'> <a onclick="removerItem()" href="javascript:void(0);" class="btn btn-xl btn-danger btn-circle"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Destruir Compra</h2></div>
-            <div class='col'>
-                <div class='text-center'> <a href="AllInOne.html" class="btn btn-xl btn-dark btn-circle"><i class="fa fa-tachometer fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Todas em 1</h2></div>
-        </div>
+
         <!-- FIM CONTEÚDO -->
         <!-- Modal -->
-        <div class="modal fade" id="modalIndex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalInserirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div id="tituloModal" class="modal-header">
