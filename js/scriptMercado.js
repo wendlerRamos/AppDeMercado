@@ -290,7 +290,7 @@ function listarCompra() {
 
 function listarRelPessoas() {
     let usuarios = bd.buscarTodosNomesUsuarios();
-    let divdeusers = document.getElementById('listadepessoas');
+    let divdeusers = document.getElementById('listadepessoas2');
     let elemento = "";
     usuarios.forEach(function bla(usuario) {
         let pessoa = bd.buscarUsuario(usuario);
@@ -302,7 +302,7 @@ function listarRelPessoas() {
             </div>
             <div class='card-body'>
                 <h5 class='card-title'>${pessoa.nome}</h5>
-                <p class='card-text' style='font-size: 1.2rem'>Valor:<b> ${pessoa.total}</b></p>
+                <p class='card-text' style='font-size: 1.2rem'>Valor:<b> ${pessoa.total.toFixed(2).replace('.',',')}</b></p>
             </div>
         </div>
     </div>
@@ -310,14 +310,14 @@ function listarRelPessoas() {
     });
     let valTotal = bd.calcularTotal();
     elemento = elemento.concat(`
-    <div class='col  marging-card'>
+    <div class='col marging-card'>
         <div class='card'>
             <div class='card-header'>
                 <h3 class='text-center'><i class="fa fa-credit-card" aria-hidden="true"></i></h3>
             </div>
             <div class='card-body'>
                 <h5 class='card-title'><b>Total Geral</b></h5>
-                <p class='card-text' style='font-size: 1.2rem'>Valor:<b> ${valTotal}</b></p>
+                <p class='card-text' style='font-size: 1.2rem'>Valor:<b> ${valTotal.toFixed(2).replace('.',',')}</b></p>
             </div>
         </div>
     </div>`);

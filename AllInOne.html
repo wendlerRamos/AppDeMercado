@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>App de Mercado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="img/browserIcon.png" type="image/x-png" />
+    <!-- Bootstrap início -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap fim -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Scripts -->
+    <script src="js/scriptMercado.js"></script>
+    <!--CSS -->
+    <link rel="stylesheet" href="css/main-css.css"> </head>
+
+<body  >
+    <!-- MENU NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="home.html"> <img src="img/headerIcon.png" width="50" height="35" alt="App de Mercado"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Inserir Produto</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Inserir Pessoa</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i>Consultar Lançamentos</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html"><i class="fa fa-usd fa-fw" aria-hidden="true"></i>Consultar Saldos</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="AllInOne.html"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i>Todas em 1</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM NAVEGAÇÃO-->
+    <div class="container" id="accordion">
+        <!-- Inicio Saldos -->
+        <div class="col-12 marging-card-all">
+            <div class='row'>
+                <div class='col-md-12 card'>
+                    <div class="row card-header" id="headingOne">
+                        <div class="col row">
+                            <div class='col-10'>
+                                <h1 class='text-left'>Saldos 
+                                    <a onclick="listarRelPessoas()">
+                                        <i class='fa fa-refresh'></i>
+                                    </a>
+                                </h1> </div>
+                            <div class='col-2'>
+                                <h1 class='text-right'><button class="btn btn-link collapsed" style='text-align: right' data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class=' fa fa-bars fa-2x' aria-hidden="true"></i></button></h1> </div>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class='row col mb-5 card-body' id='listadepessoas2'> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM SALDOS -->
+        <!-- iNICIO INSERIR -->
+        <div class='col-12 marging-card-all'>
+            <div class='row'>
+                <div class='container card'>
+                    <div class='row card-header' id="headingTwo">
+                        <div class="col row">
+                            <div class='col-10'>
+                                <h1 class='text-left'>Inserir Produto</h1> </div>
+                            <div class='col-2'>
+                                <h1 class='text-right'><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class='fa fa-bars fa-2x' aria-hidden="true"></i></button></h1> </div>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class='card-body row'>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class='col-md-12 form-group'>
+                                    <input type="text" class="form-control" placeholder="Produto" id="descricao" /> </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class='col-md-12 form-group'>
+                                    <input type="number" class="form-control" placeholder="Quantidade" id="qt" /> </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class='col-md-12 form-group'>
+                                    <input type="number" class="form-control" placeholder="Valor Unitário" id="valor" step='.01' /> </div>
+                            </div>
+                            <div class='col-sm-12 col-md-12 col-lg-12'>
+                                <div class="table-responsive" style="margin:0 auto">
+                                    <h1 class='text-center'>Lista de Pessoas <a onclick="carregaPessoas()">
+                                        <i class='fa fa-refresh'></i>
+                                    </a></h1>
+                                    <table class="table table-bordered" id="dataTable" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>
+                                                    <h3>NOME</h3></th>
+                                                <th class='text-center'>
+                                                    <h3><i class='fa fa-check' aria-hidden='true'></i></h3></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id='listadepessoas'> </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <div style="padding-top: 2%" class="col mb-5 d-flex ">
+                                <button style="margin: 0 auto" type="button" class="btn btn-primary btn-circle btn-xl" onclick="inserirProduto()"> <i class="fa fa-plus fa-2x"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM INSERIR -->
+        <!-- INICIO INSERIR PESSOA -->
+        <div class='col-12 marging-card-all'>
+            <div class='row card'>
+                <div class='card-header' id='headingThree'>
+                    <div class='col row'>
+                        <div class='col-10'>
+                            <h1 class="text-left">Inserir Pessoa</h1> </div>
+                        <div class='col-2'>
+                            <h1 class='text-right'><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class='fa fa-bars fa-2x' aria-hidden="true"></i></button></h1> </div>
+                    </div>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class='card-body'>
+                        <form>
+                            <div class='row'>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class='col-md-12 form-group'>
+                                        <input type="text" class="form-control input-md" placeholder="Nome" id="nome" required/> </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class='col-md-12 form-group'>
+                                        <input type="text" class="form-control input-md" placeholder="Email" id="email" /> </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="text-center" style="margin: 0 auto">
+                                <button class="btn btn-primary btn-xl btn-circle " onclick="inserirPessoa()" href='javascript:void(0);'> <i class="fa fa-plus fa-2x" aria-hidden='true'></i> </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM INSERIR PESSOA -->
+        <!-- INICIO CONSULTAR COMPRA -->
+        <div class='col-12 marging-card-all'>
+            <div class='row card'>
+                <div class="card-header" id='headingFour'>
+                    <div class='col row'>
+                        <div class='col-10'>
+                            <h1 class="text-left">Consultar Lançamentos <a onclick="listarCompra()" href="#"><i class='fa fa-refresh'></i></a></h1> </div>
+                        <div class='col-2'>
+                            <h1 class='text-right'>
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> <i class='fa fa-bars fa-2x'></i></button>
+                          </h1> </div>
+                    </div>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class='card-body'>
+                        <div>
+                            <div class="container col">
+                                <div class="col">
+                                    <div class="table table-responsive" style="margin:0 auto">
+                                        <table class="table table-bordered" id="dataTable" cellspacing="0">
+                                            <thead class="card-header">
+                                                <tr>
+                                                    <th>Descricao</th>
+                                                    <th>Quantidade</th>
+                                                    <th>Valor Unit</th>
+                                                    <th>Valor Total</th>
+                                                    <th>Pessoas</th>
+                                                    <th>Remover</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="listaCompras"> </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM CONSUTAR COMPRA
+        <!-- Modal -->
+        <div class="modal fade" id="modalIndex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div id="tituloModal" class="modal-header">
+                        <h5 class="modal-title" id="modalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div id="textoDoModal" class="modal-body"> </div>
+                    <div class="modal-footer">
+                        <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
