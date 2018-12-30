@@ -26,11 +26,11 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Inserir Produto</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Inserir Pessoa</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i>Consultar Lançamentos</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html"><i class="fa fa-usd fa-fw" aria-hidden="true"></i>Consultar Saldos</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="AllInOne.html"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i>Todas em 1</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html"><b><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Inserir Produto</b></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html"><b><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Inserir Pessoa</b></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html"><b><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i>Consultar Lançamentos</b></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html"><b><i class="fa fa-usd fa-fw" aria-hidden="true"></i>Consultar Saldos</b></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="AllInOne.html"><b><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i>Todas em 1</b></a> </li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         <div class="col row">
                             <div class='col-10'>
                                 <h1 class='text-left'>Saldos 
-                                    <a onclick="listarRelPessoas()">
+                                    <a onclick="listarRelPessoas()" href='javascript:void(0);'>
                                         <i class='fa fa-refresh'></i>
                                     </a>
                                 </h1> </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class='col-sm-12 col-md-12 col-lg-12'>
                                 <div class="table-responsive" style="margin:0 auto">
-                                    <h1 class='text-center'>Lista de Pessoas <a onclick="carregaPessoas()">
+                                    <h1 class='text-center'>Lista de Pessoas <a onclick="carregaPessoas()" href='javascript:void(0);'>
                                         <i class='fa fa-refresh'></i>
                                     </a></h1>
                                     <table class="table table-bordered" id="dataTable" cellspacing="0">
