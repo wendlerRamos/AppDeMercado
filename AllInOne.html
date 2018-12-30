@@ -131,7 +131,7 @@
                             <div class='row'>
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class='col-md-12 form-group'>
-                                        <input type="text" class="form-control input-md" placeholder="Nome" id="nome" required/> </div>
+                                        <input type="text" class="form-control input-md" placeholder="Nome" id="nome"/> </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class='col-md-12 form-group'>
@@ -140,7 +140,7 @@
                             </div>
                             <br>
                             <div class="text-center" style="margin: 0 auto">
-                                <button class="btn btn-primary btn-xl btn-circle " onclick="inserirPessoa()" href='javascript:void(0);'> <i class="fa fa-plus fa-2x" aria-hidden='true'></i> </button>
+                                <button class="btn btn-primary btn-xl btn-circle " onclick="inserirPessoa()" type='button' href='javascript:void(0);'> <i class="fa fa-plus fa-2x" aria-hidden='true'></i> </button>
                             </div>
                         </form>
                     </div>
@@ -154,7 +154,7 @@
                 <div class="card-header" id='headingFour'>
                     <div class='col row'>
                         <div class='col-10'>
-                            <h1 class="text-left">Consultar Lançamentos <a onclick="listarCompra()" href="#"><i class='fa fa-refresh'></i></a></h1> </div>
+                            <h1 class="text-left">Consultar Lançamentos <a onclick="listarCompra()" href="javascript:void(0);"><i class='fa fa-refresh'></i></a></h1> </div>
                         <div class='col-2'>
                             <h1 class='text-right'>
                               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> <i class='fa fa-bars fa-2x'></i></button>
@@ -190,7 +190,7 @@
         </div>
         <!-- FIM CONSUTAR COMPRA
         <!-- Modal -->
-        <div class="modal fade" id="modalIndex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalAppMercado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div id="tituloModal" class="modal-header">

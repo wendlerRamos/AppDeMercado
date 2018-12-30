@@ -147,13 +147,13 @@ function inserirPessoa() {
         let texto = "Pessoa cadastrada com sucesso !";
         let titulo = "Sucesso";
         mudarModal(titulo, texto, 'sucesso');
-        $('#modalInserirPessoa').modal('show');
+        $('#modalAppMercado').modal('show');
     }
     else {
         let texto = "Falha na gravação dos dados, por favor, tente novamente com outro nome de usuário";
         let titulo = "Erro"
         mudarModal(titulo, texto, "erro")
-        $('#modalInserirPessoa').modal('show')
+        $('#modalAppMercado').modal('show')
     }
 }
 var limparCamposUsuario = function () {
@@ -230,13 +230,13 @@ function inserirProduto() {
         let texto = "Produto cadastrado com sucesso !";
         let titulo = "Sucesso";
         mudarModal(titulo, texto, 'sucesso');
-        $('#modalInserirProduto').modal('show');
+        $('#modalAppMercado').modal('show');
     }
     else {
         let texto = "Falha na gravação dos dados, por favor, tente novamente!";
         let titulo = "Erro"
         mudarModal(titulo, texto, "erro")
-        $('#modalInserirProduto').modal('show')
+        $('#modalAppMercado').modal('show')
     }
     limparCamposProduto();
 }
@@ -246,7 +246,7 @@ function removerItem() {
     let texto = "Dados removidos com sucesso !";
     let titulo = "Dados Removidos";
     mudarModal(titulo, texto, "erro");
-    $('#modalIndex').modal('show');
+    $('#modalAppMercado').modal('show');
 }
 var mudarModal = function (titulo, texto, type) {
     $('#tituloModal').removeClass('text-danger');
@@ -277,12 +277,14 @@ function listarCompra() {
         linha.insertCell(4).innerHTML = aux.usuarios;
         let btn = document.createElement("button")
         btn.className = 'btn btn-danger'
+        btn.type = 'button'
         btn.innerHTML = '<i class="fa fa-times"></i>'
         btn.id = `id_despesa_${aux.id}`
         btn.onclick = function () {
             let id = this.id.replace('id_despesa_', '')
             bd.removerCompra(id)
-            window.location.reload()
+            //window.location.reload()
+            listarCompra()
         }
         linha.insertCell(5).append(btn)
     })
