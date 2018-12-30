@@ -12,7 +12,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Bootstrap fim -->
     <!-- Font Awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="js/scriptMercado.js"></script>
 </head>
 
@@ -37,24 +38,26 @@
 <div class="container">
     <!-- TITULO DA PÁGINA -->
     <div class="row">
-        <div class="col mb-5">
-            <h1 class="display-4">Consultar Lançamentos</h1>
+        <div class="col">
+            <h1 class="text-center">Consultar Lançamentos</h1>
+            <h1 class="text-center"><a onclick="listarCompra()" href="#"><i class='fa fa-refresh'></i></a></h1>
         </div>
     </div>
     <!-- FIM TITULO DA PÁGINA -->
     <!-- INICIO CONTEÚDO -->
     <div>
-        <div class="row col mb-5">
+        <div class="container col">
             <div class="col">
-                <table class="table table-responsive" >
-                    <thead>
+                <div class="table table-responsive"  style="margin:0 auto">
+                   <table class="table table-bordered" id="dataTable" cellspacing="0">
+                    <thead class="card-header">
                     <tr>
                         <th>Descricao</th>
                         <th>Quantidade</th>
                         <th>Valor Unit</th>
                         <th>Valor Total</th>
                         <th>Pessoas</th>
-                        <th></th>
+                        <th>Remover</th>
                     </tr>
                     </thead>
 
@@ -62,6 +65,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

@@ -14,73 +14,69 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/scriptMercado.js"></script>
+    <link rel="stylesheet" href="css/main-css.css">
 </head>
 
 <body>
-<!-- MENU NAVEGAÇÃO -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
-    <div class="container">
-        <a class="navbar-brand" href="home.html"> <img src="img/headerIcon.png" width="50" height="35" alt="App de Mercado"> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="InserirCompra.html">Inserir Produto</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html">Inserir Pessoa</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html">Consultar Lançamentos</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html">Consultar Saldos</a> </li>
-            </ul>
+    <!-- MENU NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="home.html"> <img src="img/headerIcon.png" width="50" height="35" alt="App de Mercado"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link" href="InserirCompra.html">Inserir Produto</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="InserirPessoa.html">Inserir Pessoa</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarCompra.html">Consultar Lançamentos</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="ConsultarSaldos.html">Consultar Saldos</a> </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<!-- FIM NAVEGAÇÃO-->
-<div class="container">
-    <!-- TITULO DA PÁGINA -->
-    <div class="row">
-        <div class="col mb-5">
-            <h1 class="display-4">Inserir Pessoa</h1>
-        </div>
-    </div>
-    <!-- FIM TITULO DA PÁGINA -->
+    </nav>
+    <!-- FIM NAVEGAÇÃO-->
     <!-- INICIO CONTEÚDO -->
-    <div class='row col mb-5'>
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Nome" id="nome" required/>
+    <div class="container">
+        <div class='card'>
+            <div class='card-header'>
+                <h1 class="text-center">Inserir Pessoa</h1>
+            </div>
+            <div class='card-body'>
+               <form>
+                <div class='row'>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class='col-md-12 form-group'>
+                            <input type="text" class="form-control input-md" placeholder="Nome" id="nome" required/> </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class='col-md-12 form-group'>
+                            <input type="text" class="form-control input-md" placeholder="Email" id="email" /> </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center" style="margin: 0 auto">
+                    <button class="btn btn-primary btn-xl btn-circle " onclick="inserirPessoa()" href='javascript:void(0);'> <i class="fa fa-plus fa-2x" aria-hidden='true'></i> </button>
+                </div>
+                </form>
+            </div>
         </div>
 
-        <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="Email" id="email" />
-        </div>
-    </div>
-
-    <br>
-
-    <div class="col-md-3 d-flex" style="margin: 0 auto">
-        <button style="margin: 0 auto"type="button" class="btn btn-primary" onclick="inserirPessoa()">
-            <i class="fas fa-plus"></i>
-        </button>
-    </div>
-
-    <!-- FIM CONTEÚDO -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalInserirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div id = "tituloModal"class="modal-header">
-                    <h5 class="modal-title" id="modalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div id = "textoDoModal"class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
+        <!-- FIM CONTEÚDO -->
+        <!-- Modal -->
+        <div class="modal fade" id="modalInserirPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div id="tituloModal" class="modal-header">
+                        <h5 class="modal-title" id="modalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div id="textoDoModal" class="modal-body"> </div>
+                    <div class="modal-footer">
+                        <button id="botaoModal" type="button" class="btn" data-dismiss="modal">Voltar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>

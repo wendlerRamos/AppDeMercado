@@ -12,9 +12,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Bootstrap fim -->
     <!-- Font Awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Scripts -->
     <script src="js/scriptMercado.js"></script>
-</head>
+    <!--CSS -->
+    <link rel="stylesheet" href="css/main-css.css"> </head>
 
 <body>
     <!-- MENU NAVEGAÇÃO -->
@@ -43,34 +45,22 @@
         </div>
         <!-- FIM TITULO DA PÁGINA -->
         <!-- INICIO CONTEÚDO -->
-        <div class='row col mb-5'>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">INSERIR PESSOA</h5>
-                    <p class="card-text">Insere uma nova pessoa a compra atual.</p> <a href="/appmercado/inserir/pessoa" class="btn btn-primary">Inserir</a> </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">INSERIR PRODUTO</h5>
-                    <p class="card-text">Insere um novo produto a compra atual.</p> <a href="/appmercado/inserir/compra" class="btn btn-primary">Inserir</a> </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">DESTRUIR COMPRA</h5>
-                    <p class="card-text">Remove todos os ítens da compra atual</p>
-                    <button onclick="removerItem()" class="btn btn-danger">Remover</button>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">LISTAR PRODUTOS</h5>
-                    <p class="card-text">Lista os produtos da compra atual.</p> <a href="/appmercado/consultar/compra" class="btn btn-success">Visualizar</a> </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">VISUALIZAR SALDOS</h5>
-                    <p class="card-text">Lista o total da compra e por usuário da compra atual.</p> <a href="/appmercado/consultar/saldo" class="btn btn-success">Visualizar</a> </div>
-            </div>
+        <div class='col-md-12 row'>
+            <div class='col'>
+                <div class='text-center'> <a href="InserirPessoa.html" class="btn btn-xl btn-primary btn-circle"><i class="fa fa-user-o fa-2x" aria-hidden="true"></i></a> </div>
+                <h2 class='text-center'>Inserir Pessoa</h2></div>
+            <div class='col'>
+                <div class='text-center'> <a href="InserirCompra.html" class="btn btn-xl btn-primary btn-circle"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a> </div>
+                <h2 class='text-center'>Inserir Produto</h2></div>
+            <div class='col'>
+                <div class='text-center'> <a href="ConsultarCompra.html" class="btn btn-xl btn-success btn-circle"><i class="fa fa-list-ol fa-2x" aria-hidden="true"></i></a> </div>
+                <h2 class='text-center'>Listar Compra</h2></div>
+            <div class='col'>
+                <div class='text-center'> <a href="ConsultarSaldos.html" class="btn btn-xl btn-success btn-circle"><i class="fa fa-usd fa-2x" aria-hidden="true"></i></a> </div>
+                <h2 class='text-center'>Mostrar Saldos</h2></div>
+            <div class='col'>
+                <div class='text-center'> <a onclick="removerItem()" href="javascript:void(0);" class="btn btn-xl btn-danger btn-circle"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a> </div>
+                <h2 class='text-center'>Destruir Compra</h2></div>
         </div>
         <!-- FIM CONTEÚDO -->
         <!-- Modal -->
