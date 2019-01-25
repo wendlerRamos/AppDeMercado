@@ -12,6 +12,13 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Put the rest of your rewrite rules here
 <IfModule mod_rewrite.c>
+  RewriteEngine On
 
-  RewriteRule ^/?$ /home.html [NC,L]
+  RewriteRule ^/?$ home.html [NC,L]
+  RewriteRule ^/Cadastro/Pessoa?$ CadastroPessoa.html [NC,L]
+  RewriteRule ^/Cadastro/Produto?$ CadastroProduto.html [NC,L]
+  RewriteRule ^/Consulta/Compra?$ ConsultarCompra.html [NC,L]
+  RewriteRule ^/Consulta/Saldos?$ ConsultarSaldos.html [NC,L]
+  RewriteRule ^/todas-em-uma?$ AllInOne.html [NC,L]
+
 </IfModule>
