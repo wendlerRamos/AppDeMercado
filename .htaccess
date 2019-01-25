@@ -15,10 +15,10 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   RewriteEngine On
 
   RewriteRule ^/?$ home.html [NC,L]
-  RewriteRule ^cadastro/pessoa?$ CadastroPessoa.html [NC,L]
-  RewriteRule ^cadastro/produto?$ CadastroProduto.html [NC,L]
-  RewriteRule ^consulta/compra?$ ConsultarCompra.html [NC,L]
-  RewriteRule ^consulta/saldos?$ ConsultarSaldos.html [NC,L]
+  RewriteRule ^cadastro-pessoa?$ CadastroPessoa.html [NC,L]
+  RewriteRule ^cadastro-produto?$ CadastroProduto.html [NC,L]
+  RewriteRule ^consulta-compra?$ ConsultarCompra.html [NC,L]
+  RewriteRule ^consulta-saldos?$ ConsultarSaldos.html [NC,L]
   RewriteRule ^todas-em-uma?$ AllInOne.html [NC,L]
 
 </IfModule>
