@@ -155,7 +155,7 @@
         <!-- FIM INSERIR PESSOA -->
         <!-- INICIO CONSULTAR COMPRA -->
         <div class='col-12 marging-card-all'>
-            <div class='row card'>
+            <div class='card row'>
                 <div class="card-header" id='headingFour'>
                     <div class='col row'>
                         <div class='col-10'>
@@ -167,33 +167,30 @@
                     </div>
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                    <div class='card-body'>
-                            <div class="table-responsive" style="margin:0 auto">
-                                  <table class="table table-bordered table-responsive" id="dataTable" cellspacing="0">
-                                      <thead class="card-header">
-                                          <tr>
-                                              <th>Desc</th>
-                                              <th>Qt</th>
-                                              <th>Val Unit</th>
-                                              <th>Val Tot</th>
-                                              <th>Pessoas</th>
-                                              <th>Remover</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody id="listaCompras">
-                                      </tbody>
-                                    </table>
-                          </div>
+                  <div class='container col'>
+                    <div class='card-body col'>
+                        <div class="table-responsive" style="margin:0 auto">
+                            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                                <thead class="card-header">
+                                    <tr>
+                                      <th>Desc</th>
+                                      <th>Qt</th>
+                                      <th>Val Unit</th>
+                                      <th>Val Tot</th>
+                                      <th>Pessoas</th>
+                                      <th>Remover</th>
+                                    </tr>
+                                  </thead>
+                                <tbody id="listaCompras">
+                              </tbody>
+                          </table>
+                        </div>
                     </div>
+                  </div>
                 </div>
             </div>
         </div>
         <!-- FIM CONSUTAR COMPRA -->
-          <div style='display: none' class='col-12 marging-card-all'>
-            <div class='col'>
-                <div class='text-center'> <a onclick="removerItem()" href="javascript:void(0);" class="btn btn-xl btn-danger btn-circle"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a> </div>
-                <h2 class='text-center'>Destruir Compra</h2></div>
-          </div>
 
         <!-- Modal -->
         <div class="modal fade" id="modalAppMercado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
