@@ -272,8 +272,8 @@ function listarCompra() {
         let linha = listaDeCompras.insertRow();
         linha.insertCell(0).innerHTML = aux.descricao;
         linha.insertCell(1).innerHTML = aux.qt;
-        linha.insertCell(2).innerHTML = aux.valorU;
-        linha.insertCell(3).innerHTML = aux.valorT;
+        linha.insertCell(2).innerHTML = (1.0 * aux.valorU).toFixed(2).replace('.',',');
+        linha.insertCell(3).innerHTML = aux.valorT.toFixed(2).replace('.',',');
         linha.insertCell(4).innerHTML = aux.usuarios;
         let btn = document.createElement("button")
         btn.className = 'btn btn-danger'
