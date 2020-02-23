@@ -37,6 +37,8 @@
     </nav>
     <!-- FIM NAVEGAÇÃO-->
     <div class="container">
+
+
         <!-- TITULO DA PÁGINA -->
         <div class="container">
             <h1 class='text-center'><b>Inserir Produto</b></h1> </div>
@@ -83,6 +85,15 @@
                 <button style="margin: 0 auto" type="button" class="btn btn-primary btn-circle btn-xl" onclick="inserirProduto()"> <i class="fa fa-plus fa-2x"></i> </button>
             </div>
         </div>
+        <!-- Alert  -->
+        <div id="notificacaoAlert" class="alert hidden  alert-dismissible fade" role="alert">
+            <h4 id="tituloAlert" class="alert-heading"></h4>
+            <p id="textoDoAlert"></p>
+            <button type="" onclick="$('#notificacaoAlert').removeClass('show')" class="close" data-close="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- Fim Alert  -->
         <!-- FIM CONTEÚDO -->
         <!-- Modal -->
         <div class="modal fade" id="modalAppMercado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,6 +110,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </body>
 

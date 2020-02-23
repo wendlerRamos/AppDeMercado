@@ -128,6 +128,7 @@ class Bd {
             bd.alterarValorUsuario(pessoa, valorUser, 'subtracao');
         });
         localStorage.removeItem(idCompra);
+        mudarAlert('Sucesso !', 'Item removido da lista com sucesso !', 'success')
     }
 }
 //Limpa o local storage para cadastrar nova compra
@@ -146,14 +147,14 @@ function inserirPessoa() {
         limparCamposUsuario();
         let texto = "Pessoa cadastrada com sucesso !";
         let titulo = "Sucesso";
-        mudarModal(titulo, texto, 'sucesso');
-        $('#modalAppMercado').modal('show');
+        mudarAlert(titulo, texto, 'sucesso');
+        //$('#modalAppMercado').modal('show');
     }
     else {
         let texto = "Falha na gravação dos dados, por favor, tente novamente com outro nome de usuário";
         let titulo = "Erro"
-        mudarModal(titulo, texto, "erro")
-        $('#modalAppMercado').modal('show')
+        mudarAlert(titulo, texto, "erro")
+        //$('#modalAppMercado').modal('show')
     }
 }
 var limparCamposUsuario = function () {
@@ -229,14 +230,14 @@ function inserirProduto() {
         }
         let texto = "Produto cadastrado com sucesso !";
         let titulo = "Sucesso";
-        mudarModal(titulo, texto, 'sucesso');
-        $('#modalAppMercado').modal('show');
+        mudarAlert(titulo, texto, 'sucesso');
+        //$('#modalInserirProduto').modal('show');
     }
     else {
         let texto = "Falha na gravação dos dados, por favor, tente novamente!";
         let titulo = "Erro"
-        mudarModal(titulo, texto, "erro")
-        $('#modalAppMercado').modal('show')
+        mudarAlert(titulo, texto, "erro")
+        //$('#modalInserirProduto').modal('show')
     }
     limparCamposProduto();
 }
@@ -262,6 +263,31 @@ var mudarModal = function (titulo, texto, type) {
     document.getElementById('tituloModal').innerText = titulo
     document.getElementById('textoDoModal').innerText = texto
 }
+
+var mudarAlert = function (titulo, texto, type) {
+    $('#notificacaoAlert').removeClass('alert-success')
+    $('#notificacaoAlert').removeClass('alert-danger')
+    $('#tituloAlert').removeClass('text-danger');
+    if (type == "erro") {
+        $('#notificacaoAlert').addClass('alert-danger')
+        document.getElementById("tituloAlert").classList.add("text-danger")
+    }
+    else {
+        $('#notificacaoAlert').addClass('alert-success')
+        document.getElementById("tituloAlert").classList.add("text-success")
+    }
+    document.getElementById('tituloAlert').innerText = titulo
+    document.getElementById('textoDoAlert').innerText = texto
+    $("#notificacaoAlert").addClass('show')
+    dismissAlert()
+}
+
+function dismissAlert(){
+  window.setTimeout(function() {
+      $(".alert").removeClass('show')
+  }, 2000);
+}
+
 
 function listarCompra() {
     let compras = [];
@@ -350,3 +376,9 @@ function listarRelPessoasOld() {
         </div>`);
     divdeusers.innerHTML = (elemento);
 }
+
+$('#notificacaoAlert').on('closed.bs.alert', function () {
+  // do something…
+  console.log("close")
+  $this.removeClass("show");
+})
